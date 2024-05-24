@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+
+.puzzle {
+  margin: 0;
+  background: #64bdb0;
+  padding: 0;
+  --size: 100px;
+  --tile: #342956;
+  /* --correct: #6e50b4; */
+  --correct: rgb(255, 119, 0);
+
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  font-family: "Pacifico", cursive;
+}
+
+.puzzle * {
+  font-family: "Pacifico", cursive;
+}

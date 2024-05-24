@@ -1,0 +1,272 @@
+.App {
+  /* Add your background pattern here */
+  font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  height: 100vh;
+  background-color: #313131;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.171) 2px,
+    transparent 0
+  );
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+}
+
+.card {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #212121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+}
+
+h1 {
+  color: #fff;
+  padding-bottom: 30px;
+  cursor: none;
+}
+
+.screen {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-width: 400px;
+}
+
+.start-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.start-screen.active {
+  transform: translateX(0);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  color: white;
+}
+
+.container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 13px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input {
+  width: 250px;
+  height: 45px;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.501);
+  /* background-color: transparent; */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+  border: 2px solid transparent;
+  color: #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .input:valid ~ .label,
+.container .input:focus ~ .label {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+
+.container .input:valid,
+.container .input:focus {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+/* image */
+.playImage {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* background-color: rgb(74, 228, 40); */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-card {
+  height: 200px;
+  width: 230px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  position: relative;
+  display: inline-block;
+  /* background-color: #cecaca; */
+}
+
+.img-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* overflow: hidden; */
+}
+.img-container h2 {
+  color: #fff;
+  margin-left: 20px;
+}
+
+.menu-card:hover .img-container::before {
+  bottom: 0;
+}
+.menu-card img {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 150px;
+  margin-left: 30px;
+  /* margin-top: 20px; */
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+.menu-card:hover img {
+  filter: blur(5px);
+  transform: scale(0.9);
+}
+.details {
+  position: absolute;
+  top: 40%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.menu-card:hover .details {
+  opacity: 1;
+}
+.game-name {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.input[type="checkbox"] {
+  display: none;
+}
+
+/* Style for the custom checkbox */
+.custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Style for the custom checkmark */
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+/* Show the checkmark when checkbox is checked */
+.input[type="checkbox"]:checked + .custom-checkbox::after {
+  opacity: 1;
+}
+/* button */
+button a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+button a::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background-color: #0b1cb5;
+  transition: 0.3s ease-in-out;
+  transform: scaleY(1);
+}
+
+button a:hover::before {
+  transform: scaleY(0);
+}
+
+button a::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% - 12px);
+  background-color: #23c62b;
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1);
+  transition-delay: 0.5s;
+}
+
+button a:hover::after {
+  transform: scaleX(0);
+}
+
+button a span {
+  position: relative;
+  z-index: 3;
+}
+
+button {
+  background-color: none;
+  text-decoration: none;
+  background-color: #0fbc43;
+  border: none;
+  border-radius: 10px;
+}

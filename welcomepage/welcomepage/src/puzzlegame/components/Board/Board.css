@@ -1,0 +1,43 @@
+.game {
+  padding-top: 150px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-right : 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.board {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, var(--size));
+  grid-template-rows: repeat(4, var(--size));
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #55ab9f;
+  font-family: "Pacifico", cursive;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.moves {
+  display: flex;
+  justify-content: space-between;
+  background-color: darkcyan;
+  margin-bottom: 10px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.moves p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.pause-button {
+  margin-top: 10px;
+  position: relative;
+}
